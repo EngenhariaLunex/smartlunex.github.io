@@ -1,0 +1,75 @@
+<!-- Complete project details: https://randomnerdtutorials.com/esp8266-nodemcu-web-server-websocket-sliders/ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LUNEX TECNOLOGIA</title> <!--título do documento que vai escrito na aba do navegador-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico"> <!--ícone que vai ao lado do título na aba do navegador-->
+    <link rel="stylesheet" type="text/css" href="style.css"> <!--chama o arquivo style.css para definição de estilos da página-->
+    <meta charset="UTF-8"/> 
+</head>
+<body>
+    <div class="topnav"> <!--divisão do menu de navegação superior-->
+        <img src="logo.png" width="200" height="141"> <!--logo Lunex-->
+    </div>
+    <div class="content"> <!--divisão onde todo o conteúdo está, ou seja, tudo abaixo do menu superior-->
+        <div class="card-grid"> <!--divisão onde todos os cards estão-->
+
+            <div class="card">
+                <p class="card-title">ON/OFF</p>
+                <p class="switch">
+                    <input type="checkbox" onclick="updateCheckbox(this)" id="slider3">
+                   <label for="slider3"></label>
+                </p>
+                <!--MOSTRA O VALOR DO BOTÃO (0 OU 1): <p class="state">Valor: <span id="sliderValue3"></span></p>-->
+            </div>
+
+            <div class="card">
+                <p class="card-title">BRILHO</p>
+                <p class="switch">
+                    <input type="range" onchange="updateSliderPWM(this)" oninput="updateSliderPWM(this)" id="slider2" min="0" max="100" step="1" value ="100" class="slider">
+                </p>
+                <p class="state"><span id="sliderValue2"></span> &percnt;</p>
+            </div>
+
+            <div class="card">
+                <p class="card-title">AÇOUGUE</p>
+                <p class="switch">
+                    <input type="checkbox" onclick="updateCheckbox(this)" id="slider4">
+                    <label for="slider4"></label>
+                </p>
+                <!--MOSTRA O VALOR DO BOTÃO (0 OU 1): <p class="state">Valor: <span id="sliderValue4"></span></p> -->
+            </div>
+
+            <div class="card">
+                <p class="card-title">PADARIA</p>
+                <p class="switch">
+                    <input type="checkbox" onclick="updateCheckbox(this)" id="slider4">
+                    <label for="slider4"></label>
+                </p>
+                <!--MOSTRA O VALOR DO BOTÃO (0 OU 1): <p class="state">Valor: <span id="sliderValue4"></span></p> -->
+            </div>
+
+
+            <div class="card">
+                <p class="card-title">CONGELADOR</p>
+                <p class="switch">
+                    <input type="checkbox" onclick="updateCheckbox(this)" id="slider4">
+                    <label for="slider4"></label>
+                </p>
+                <!--MOSTRA O VALOR DO BOTÃO (0 OU 1): <p class="state">Valor: <span id="sliderValue4"></span></p> -->
+            </div>
+
+            <!--BOTÕES-->
+            <button onclick="window.location.href='acougue.html'"><p class="card-title">PERSONALIZADO</p></button>
+           <!-- <button onclick="window.location.href='acougue.html'"><p class="card-title">PADARIA</p></button>
+            <button onclick="window.location.href='acougue.html'"><p class="card-title">CONGELADOR</p></button> -->
+        
+        
+
+        </div>
+    </div>
+    <script src="script.js"></script> <!--chama arquivo script.js que realiza a comunicação da página html com o ESP além da automação da própria página html (como somente mostrar os sliders quando o botão 7 for pressionado)-->
+</body>
+</html>
