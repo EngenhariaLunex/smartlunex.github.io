@@ -1,0 +1,160 @@
+/*  Complete project details: https://randomnerdtutorials.com/esp8266-nodemcu-web-server-websocket-sliders/  */
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    display: inline-block;
+    text-align: center;
+  }
+  h1 {
+    font-size: 1.8rem;
+    color: white;
+  }
+  p {
+    font-size: 1.4rem;
+  }
+  .topnav {
+    overflow: hidden;
+    background-color: transparent;
+  }
+  body {
+    margin: 0;
+  }
+  .content {
+    padding: 30px;
+  }
+  .card-grid {
+    max-width: 700px;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  .card {
+    background-color: white;
+    box-shadow: 2px 2px 12px 1px rgba(140,140,140,.5);
+  }
+  .card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #034078
+  }
+  .state {
+    font-size: 1.2rem;
+    color:#1282A2;
+  }
+  .slider2 {
+    -webkit-appearance: none;
+    margin: 0 auto;
+    width: 100%;
+    height: 15px;
+    border-radius: 10px;
+    /*background: rgb(175, 175, 175);*/
+    background-image:
+    linear-gradient(
+      to right, 
+      #ffa928 0%, #ffde5b 30%, #feffd5 40%, #fafcff 60%, #81d1ff 80%, #1d2beb 100%
+  );
+  }
+  .slider {
+    -webkit-appearance: none;
+    margin: 0 auto;
+    width: 100%;
+    height: 15px;
+    border-radius: 10px;
+    background: rgb(175, 175, 175);
+    background-image:
+    linear-gradient(
+      to right, 
+      #202020 0%, #474747 20%, #8b8b8b 40%, #b6b6b6 60%, #dbdbdb 80%, #ffffff 100%
+  );
+  }
+
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #034078;
+    cursor: pointer;
+  }
+  .slider::-moz-range-thumb {
+    width: 30px;
+    height: 30px;
+    border-radius: 50% ;
+    background: #034078;
+    cursor: pointer;
+  }
+  .switch {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .slider2::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #034078;
+    cursor: pointer;
+  }
+  .slider2::-moz-range-thumb {
+    width: 30px;
+    height: 30px;
+    border-radius: 50% ;
+    background: #034078;
+    cursor: pointer;
+  }
+  .switch2 {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+
+
+
+  input[type=checkbox]{
+    height: 0;
+    width: 0;
+    visibility: hidden;
+    margin-left: 50px;
+  }
+  
+  label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 100px;
+    height: 50px;
+    background: rgb(175, 175, 175);
+    display: block;
+    border-radius: 50px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  label:after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border-radius: 40px;
+    transition: 0.3s;
+  }
+  
+  input:checked + label {
+    background: #1b2c5d;
+  }
+  
+  input:checked + label:after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+  }
+  
+  label:active:after {
+    width: 40px;
+  }
